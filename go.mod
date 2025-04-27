@@ -1,4 +1,4 @@
-module goi18n
+module github.com/icehuntmen/goi18n
 
 go 1.24
 
