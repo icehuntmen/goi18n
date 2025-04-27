@@ -1,7 +1,3 @@
-Вот полный `README.md` для вашего пакета `goi18n`, написанный на английском языке с подробным описанием:
-
----
-
 # goi18n for DiscorgGo
 
 [![Go](https://img.shields.io/badge/Go-1.20+-blue.svg)](https://golang.org/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
