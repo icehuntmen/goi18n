@@ -1,0 +1,31 @@
+language: go
+
+# Укажите версии Go, которые нужно протестировать
+go:
+  - 1.20
+  - 1.21
+  - tip  # Проверка на последней экспериментальной версии Go
+
+# Установка зависимостей
+before_install:
+  - go mod download
+
+# Сценарий тестирования
+script:
+  - go vet ./...  # Проверка кода на наличие потенциальных ошибок
+  - go test -v -coverprofile=coverage.txt -covermode=atomic ./...  # Запуск тестов с покрытием
+
+# После успешного выполнения тестов
+after_success:
+  - bash <(curl -s https://codecov.io/bash)  # Отправка данных о покрытии в Codecov (опционально)
+
+# Настройка кэширования для ускорения загрузки зависимостей
+cache:
+  directories:
+    - "$HOME/gopath/pkg/mod"
+
+# Оповещения (опционально)
+notifications:
+  email:
+    on_success: change  # Получать уведомления только при изменении статуса
+    on_failure: always  # Всегда получать уведомления об ошибках

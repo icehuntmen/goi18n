@@ -1,0 +1,6 @@
+{
+  "hello": {
+    "world": "Hallo, {{.name}}!"
+  },
+  "goodbye": ["Tschüss!", "Auf Wiedersehen!"]
+}
